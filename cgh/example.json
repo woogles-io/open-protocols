@@ -1,0 +1,271 @@
+{
+    "events": [
+        {
+            "nickname": "cesar",
+            "rack": "DIJNNR?",
+            "totalScore": 30,
+            "tilePlayEvent": {
+                "coordinates": "8D",
+                "play": "DJINN",
+                "score": 30
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "HITWY",
+            "totalScore": 33,
+            "tilePlayEvent": {
+                "coordinates": "I7",
+                "play": "WITHY",
+                "score": 33
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "?CEEIRV",
+            "totalScore": 110,
+            "tilePlayEvent": {
+                "coordinates": "J1",
+                "play": "sCRIEVE",
+                "score": 80
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "?CEEIRV",
+            "totalScore": 164,
+            "tilePlayEvent": {
+                "coordinates": "1H",
+                "play": "MAsTERLy",
+                "score": 131
+            },
+            "comment": "Josh said: \"I never get to triple triple...\" and laid this down. \"I don't think I had a triple-triple if you'd made it an R ...\"\n\nA few seconds later, oh no, \"you had VERJUICE!\""
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AEIMPZY",
+            "totalScore": 177,
+            "tilePlayEvent": {
+                "coordinates": "H11",
+                "play": "MAZEY",
+                "score": 67
+            },
+            "comment": "I spent around 10 minutes trying to calm down the murderous voices, then I laid this down (I did see MAIZE). I talked myself out of AZYME# but not MAZEY# apparently."
+        },
+        {
+            "nickname": "josh",
+            "totalScore": 164,
+            "challengeEvent": {
+                "wordsChallenged": [
+                    "MAZEY"
+                ]
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "AAEGL",
+            "totalScore": 190,
+            "tilePlayEvent": {
+                "coordinates": "H11",
+                "play": "ALGAE",
+                "score": 26
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AEIMPYZ",
+            "totalScore": 142,
+            "tilePlayEvent": {
+                "coordinates": "N1",
+                "play": "LAZY",
+                "score": 32
+            },
+            "comment": "Obviously a big mistake, I can do something like PYAEMIA keeping the Z, etc, but my focus was long gone and I had too little time left now."
+        },
+        {
+            "nickname": "josh",
+            "rack": "EOO",
+            "totalScore": 216,
+            "tilePlayEvent": {
+                "coordinates": "3L",
+                "play": "OOZE",
+                "score": 26
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "DEIMOPR",
+            "totalScore": 190,
+            "tilePlayEvent": {
+                "coordinates": "5E",
+                "play": "DEMIREP",
+                "score": 48
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "ACEKT",
+            "totalScore": 254,
+            "tilePlayEvent": {
+                "coordinates": "E8",
+                "play": "JACKET",
+                "score": 38
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AAIIOOS",
+            "totalScore": 190,
+            "exchangeEvent": {
+                "exchangedRack": "AIIOO"
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "BERW",
+            "totalScore": 287,
+            "tilePlayEvent": {
+                "coordinates": "6C",
+                "play": "BREW",
+                "score": 33
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AAISSST",
+            "totalScore": 260,
+            "tilePlayEvent": {
+                "coordinates": "14H",
+                "play": "ASTASIAS",
+                "score": 70
+            },
+            "comment": "I did my best to look dejected here, whilst staying within the rules, obviously."
+        },
+        {
+            "nickname": "josh",
+            "totalScore": 287,
+            "challengeEvent": {
+                "wordsChallenged": [
+                    "ASTASIAS"
+                ],
+                "playValid": true
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AADEEFO",
+            "totalScore": 292,
+            "tilePlayEvent": {
+                "coordinates": "D12",
+                "play": "DEAF",
+                "score": 32
+            }
+        },
+        {
+            "nickname": "josh",
+            "rack": "GORUU",
+            "totalScore": 301,
+            "tilePlayEvent": {
+                "coordinates": "L9",
+                "play": "RUGOUS",
+                "score": 14
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "AEEFINO",
+            "totalScore": 319,
+            "tilePlayEvent": {
+                "coordinates": "O11",
+                "play": "FEASE",
+                "score": 27
+            },
+            "comment": "Too scared to leave that S open for another turn. IDK, I need to give myself better win chances.\n\nFIE(F) looks a lot better."
+        },
+        {
+            "nickname": "josh",
+            "rack": "OOTUX",
+            "totalScore": 349,
+            "tilePlayEvent": {
+                "coordinates": "15A",
+                "play": "OUTFOX",
+                "score": 48
+            },
+            "comment": "ur_outfoxed"
+        },
+        {
+            "nickname": "cesar",
+            "rack": "EGHIINO",
+            "totalScore": 346,
+            "tilePlayEvent": {
+                "coordinates": "4F",
+                "play": "HOG",
+                "score": 27
+            },
+            "comment": "I'm just trying to catch up. Quackondo likes OH keeping the ugly EGIIN. I don't know."
+        },
+        {
+            "nickname": "josh",
+            "totalScore": 349,
+            "exchangeEvent": {
+                "numExchanged": 4
+            }
+        },
+        {
+            "nickname": "cesar",
+            "rack": "EIIINOU",
+            "totalScore": 359,
+            "tilePlayEvent": {
+                "coordinates": "G7",
+                "play": "INION",
+                "score": 13
+            },
+            "comment": "Geez. I almost played UNION but wanted to undouble the I's plus I thought he might have thrown the Q in. I certainly have no real hopes of bingoing here, right - just wanted to get a big Q score in."
+        },
+        {
+            "nickname": "josh",
+            "rack": "DINQR",
+            "totalScore": 397,
+            "tilePlayEvent": {
+                "coordinates": "N10",
+                "play": "QINDAR",
+                "score": 48
+            },
+            "comment": "He kept the Q on the exchange!"
+        },
+        {
+            "nickname": "cesar",
+            "rack": "EILNPUV",
+            "totalScore": 441,
+            "tilePlayEvent": {
+                "coordinates": "2B",
+                "play": "VULPINE",
+                "score": 82
+            },
+            "comment": "Miracle draw."
+        },
+        {
+            "nickname": "cesar",
+            "rack": "BLNOST",
+            "totalScore": 457,
+            "gameEndEvent": {
+                "endgameRackBonus": 16
+            }
+        }
+    ],
+    "players": [
+        {
+            "nickname": "cesar",
+            "realName": "César Del Solar"
+        },
+        {
+            "nickname": "josh",
+            "realName": "Joshua Sokol-Rubenstein"
+        }
+    ],
+    "lexicon": "NWL20",
+    "description": "Game 8 of MERRY 2023, played on Dec 28, 2023 in Montclair, NJ",
+    "letterDistribution": "english",
+    "challengeRule": "DOUBLE",
+    "numberOfZeroptTurnsToEndGame": 6
+}

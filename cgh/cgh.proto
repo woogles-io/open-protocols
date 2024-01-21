@@ -1,0 +1,166 @@
+syntax = "proto3";
+
+package woogles_open_protocols;
+option go_package = "github.com/woogles-io/open-protocols/gen/cgh";
+
+message PlayerInfo {
+  // nickname should be a nickname the player is known by; but it can also be
+  // their full name. It should be required per player.
+  string nickname = 1;
+  // real_name can potentially be optional.
+  string real_name = 2;
+}
+
+enum ChallengeRule {
+  SINGLE = 0;
+  DOUBLE = 1;
+  // FIVE_POINT is five points per word challenged.
+  FIVE_POINT = 2;
+  // TEN_POINT is ten points per play challenged.
+  TEN_POINT = 3;
+  TRIPLE = 4;
+}
+
+enum EndgameRackPointsRule {
+  DOUBLE_PTS = 0;
+  PLUSMINUS_PTS = 1;
+}
+
+// CrosswordGameHistory encodes an entire History of a Crossword Game. See
+// README for more details.
+message CrosswordGameHistory {
+  // events is a chronological list of gameplay events. An "event" could
+  // be defined as what transpires during a player's turn when the clock
+  // is hit.
+  repeated CrosswordGameEvent events = 1;
+  // players is a list of players. It is invalid to have more than one player
+  // have the same "nickname". Players are listed from first to last (in order
+  // of game play).
+  repeated PlayerInfo players = 2;
+
+  // lexicon is a lexicon code, such as NWL20 or CSW21. There should be a
+  // list of commonly accepted lexicon codes.
+  string lexicon = 3;
+  // variant is a variant that describes the rules of the game. This should
+  // maybe be an enum.
+  string variant = 4;
+  // board_layout should describe the board. If left blank, it should default
+  // to a common game board representation. Otherwise, it should be a string
+  // representation of the board; see README in this directory for format.
+  string board_layout = 5;
+  // description is a freeform comment section describing the circumstances
+  // under which this game were played.
+  string description = 6;
+
+  // letter_distribution should be a string, like "english" or "english_super".
+  // XXX: maybe the actual letter distribution?
+  string letter_distribution = 7;
+
+  ChallengeRule challenge_rule = 8;
+
+  // starting_cgp is a starting CGP position, if any. See the CGP directory
+  // for what constitutes a CGP string. Note that many of the fields in the CGP
+  // string, such as lexicon and letter distribution, would be redundant and
+  // should be ignored by the implementer in favor of what is in this
+  // CrosswordGameHistory message.
+  string starting_cgp = 9;
+
+  // last_known_racks is in order of the players.
+  repeated string last_known_racks = 10;
+
+  // how much time do they have at the start, in seconds. This field shouldn't
+  // be required; there will just not be timing info.
+  repeated int32 starting_time = 11;
+
+  // what is the time increment per player, in seconds
+  repeated int32 time_increments = 12;
+
+  /// more rules here?
+  EndgameRackPointsRule endgame_rack_points_rule = 13;
+
+  // should this be a ruleset instead? different languages have different rules
+  // for what constitutes a "zero" here.
+  int32 number_of_zeropt_turns_to_end_game = 14;
+}
+
+message CrosswordGameEvent {
+  // nickname is the nickname (in PlayerInfo) of the player who passed.
+  string nickname = 1;
+  // rack is the rack the player had when they caused this event to occur.
+  string rack = 2;
+  // total_score is the score the player had after this event.
+  int32 total_score = 3;
+  // time_remaining_ms is how much time the player had remaining on their clock,
+  // after this event. This time should be in seconds.
+  int32 time_remaining = 4;
+
+  oneof event {
+    PassEvent pass_event = 6;
+    ChallengeEvent challenge_event = 7;
+    ExchangeEvent exchange_event = 8;
+    TilePlayEvent tile_play_event = 9;
+    GameEndEvent game_end_event = 10;
+    OverdrawEvent overdraw_event = 11;
+  }
+  // a comment is a freeform comment for this event. Ideally the user can use
+  // something like Markdown, but there's no limit placed on what the comment
+  // can contain.
+  string comment = 5;
+}
+
+// PassEvent happens if the player purposefully passes their turn.
+message PassEvent {}
+
+// a ChallengeEvent happens only right after a tile play event. Any other
+// time it should be considered invalid.
+message ChallengeEvent {
+  // words_challenged is a list of every challenged word.
+  repeated string words_challenged = 1;
+  // score_bonus is the bonus points given to the challenged player.
+  int32 score_bonus = 2;
+  // play_valid -- was the play valid? If using double challenge, and the
+  // challenger was wrong, we do not need to follow the ChallengeEvent
+  // with a PassEvent. It should be implied.
+  bool play_valid = 3;
+}
+
+message ExchangeEvent {
+  // for cases where we don't know what tiles they exchanged, there should be
+  // a number.
+  oneof exchanged {
+    string exchanged_rack = 1;
+    int32 num_exchanged = 2;
+  }
+}
+
+message TilePlayEvent {
+  // coordinates should be specified as A13 or 7N, for example. If the number
+  // is first, the play is horizontal. If the letter is first, the play is
+  // vertical.
+  string coordinates = 1;
+  // the play should be specified as the tiles of a word. Previously played
+  // tiles should not be specified with parentheses or dots; use the letter
+  // directly. Blanks should be in lowercase.
+  string play = 2;
+
+  int32 score = 3;
+
+  // if the play was incorrectly scored, this field should have the score
+  // agreed on by the players.
+  oneof wrong_score {
+    bool score_incorrect = 4;
+    int32 scored_as = 5;
+  }
+}
+
+message GameEndEvent {
+  int32 endgame_rack_bonus = 1;
+  // for rulesets where one player gains points and the other loses points,
+  // we should have two GameEndEvents. This can also occur if the game
+  // ended by accumulation of zero-pt turns.
+  int32 endgame_points_lost = 2;
+  // points_lost_on_time should be shown for each player if applicable.
+  int32 points_lost_on_time = 3;
+}
+
+message OverdrawEvent { string rack_thrown_in = 1; }

@@ -1,0 +1,261 @@
+events:  {
+  nickname:  "cesar"
+  rack:  "DIJNNR?"
+  total_score:  30
+  tile_play_event:  {
+    coordinates:  "8D"
+    play:  "DJINN"
+    score:  30
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "HITWY"
+  total_score:  33
+  tile_play_event:  {
+    coordinates:  "I7"
+    play:  "WITHY"
+    score:  33
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "?CEEIRV"
+  total_score:  110
+  tile_play_event:  {
+    coordinates:  "J1"
+    play:  "sCRIEVE"
+    score:  80
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "?CEEIRV"
+  total_score:  164
+  tile_play_event:  {
+    coordinates:  "1H"
+    play:  "MAsTERLy"
+    score:  131
+  }
+  comment:  "Josh said: \"I never get to triple triple...\" and laid this down. \"I don't think I had a triple-triple if you'd made it an R ...\"\n\nA few seconds later, oh no, \"you had VERJUICE!\""
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AEIMPZY"
+  total_score:  177
+  tile_play_event:  {
+    coordinates:  "H11"
+    play:  "MAZEY"
+    score:  67
+  }
+  comment:  "I spent around 10 minutes trying to calm down the murderous voices, then I laid this down (I did see MAIZE). I talked myself out of AZYME# but not MAZEY# apparently."
+}
+events:  {
+  nickname:  "josh"
+  total_score:  164
+  challenge_event:  {
+    words_challenged:  "MAZEY"
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "AAEGL"
+  total_score:  190
+  tile_play_event:  {
+    coordinates:  "H11"
+    play:  "ALGAE"
+    score:  26
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AEIMPYZ"
+  total_score:  142
+  tile_play_event:  {
+    coordinates:  "N1"
+    play:  "LAZY"
+    score:  32
+  }
+  comment:  "Obviously a big mistake, I can do something like PYAEMIA keeping the Z, etc, but my focus was long gone and I had too little time left now."
+}
+events:  {
+  nickname:  "josh"
+  rack:  "EOO"
+  total_score:  216
+  tile_play_event:  {
+    coordinates:  "3L"
+    play:  "OOZE"
+    score:  26
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "DEIMOPR"
+  total_score:  190
+  tile_play_event:  {
+    coordinates:  "5E"
+    play:  "DEMIREP"
+    score:  48
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "ACEKT"
+  total_score:  254
+  tile_play_event:  {
+    coordinates:  "E8"
+    play:  "JACKET"
+    score:  38
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AAIIOOS"
+  total_score:  190
+  exchange_event:  {
+    exchanged_rack:  "AIIOO"
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "BERW"
+  total_score:  287
+  tile_play_event:  {
+    coordinates:  "6C"
+    play:  "BREW"
+    score:  33
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AAISSST"
+  total_score:  260
+  tile_play_event:  {
+    coordinates:  "14H"
+    play:  "ASTASIAS"
+    score:  70
+  }
+  comment:  "I did my best to look dejected here, whilst staying within the rules, obviously."
+}
+events:  {
+  nickname:  "josh"
+  total_score:  287
+  challenge_event:  {
+    words_challenged:  "ASTASIAS"
+    play_valid:  true
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AADEEFO"
+  total_score:  292
+  tile_play_event:  {
+    coordinates:  "D12"
+    play:  "DEAF"
+    score:  32
+  }
+}
+events:  {
+  nickname:  "josh"
+  rack:  "GORUU"
+  total_score:  301
+  tile_play_event:  {
+    coordinates:  "L9"
+    play:  "RUGOUS"
+    score:  14
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "AEEFINO"
+  total_score:  319
+  tile_play_event:  {
+    coordinates:  "O11"
+    play:  "FEASE"
+    score:  27
+  }
+  comment:  "Too scared to leave that S open for another turn. IDK, I need to give myself better win chances.\n\nFIE(F) looks a lot better."
+}
+events:  {
+  nickname:  "josh"
+  rack:  "OOTUX"
+  total_score:  349
+  tile_play_event:  {
+    coordinates:  "15A"
+    play:  "OUTFOX"
+    score:  48
+  }
+  comment:  "ur_outfoxed"
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "EGHIINO"
+  total_score:  346
+  tile_play_event:  {
+    coordinates:  "4F"
+    play:  "HOG"
+    score:  27
+  }
+  comment:  "I'm just trying to catch up. Quackondo likes OH keeping the ugly EGIIN. I don't know."
+}
+events:  {
+  nickname:  "josh"
+  total_score:  349
+  exchange_event:  {
+    num_exchanged:  4
+  }
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "EIIINOU"
+  total_score:  359
+  tile_play_event:  {
+    coordinates:  "G7"
+    play:  "INION"
+    score:  13
+  }
+  comment:  "Geez. I almost played UNION but wanted to undouble the I's plus I thought he might have thrown the Q in. I certainly have no real hopes of bingoing here, right - just wanted to get a big Q score in."
+}
+events:  {
+  nickname:  "josh"
+  rack:  "DINQR"
+  total_score:  397
+  tile_play_event:  {
+    coordinates:  "N10"
+    play:  "QINDAR"
+    score:  48
+  }
+  comment:  "He kept the Q on the exchange!"
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "EILNPUV"
+  total_score:  441
+  tile_play_event:  {
+    coordinates:  "2B"
+    play:  "VULPINE"
+    score:  82
+  }
+  comment:  "Miracle draw."
+}
+events:  {
+  nickname:  "cesar"
+  rack:  "BLNOST"
+  total_score:  457
+  game_end_event:  {
+    endgame_rack_bonus:  16
+  }
+}
+players:  {
+  nickname:  "cesar"
+  real_name:  "César Del Solar"
+}
+players:  {
+  nickname:  "josh"
+  real_name:  "Joshua Sokol-Rubenstein"
+}
+lexicon:  "NWL20"
+description:  "Game 8 of MERRY 2023, played on Dec 28, 2023 in Montclair, NJ"
+letter_distribution:  "english"
+challenge_rule:  DOUBLE
+number_of_zeropt_turns_to_end_game:  6
