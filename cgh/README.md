@@ -1,3 +1,6 @@
+NOTE: the protocol described here is just a draft and very likely pretty different from what
+we actually want. We will likely redo it.
+
 # Impetus
 
 The impetus for creating a new format for crossword game representation is manyfold.
