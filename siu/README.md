@@ -1,4 +1,7 @@
-# SIU - Scrabble Interface, Universal
+# SIU
+
+SIU is not an acronym. You can probably guess what it might stand for, but
+it is just SIU.
 
 A text protocol between crossword-game front ends (Woogles, desktop GUIs,
 scripts, AI agents) and analysis engines (Macondo, MAGPIE, Quackle, Elise),

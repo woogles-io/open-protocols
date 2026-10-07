@@ -1,4 +1,4 @@
-"""A minimal engine that speaks SIU correctly but knows no Scrabble.
+"""A minimal engine that speaks SIU correctly but knows nothing about the game.
 
 It exists to test the conformance harness itself, and as a readable sketch of
 the protocol's control flow (reader thread, interruptible search, one

@@ -1,7 +1,7 @@
 # SIU protocol - draft 0.2
 
-SIU (Scrabble Interface, Universal) lets a front end drive any crossword-game
-analysis engine over a line-based text protocol.
+SIU lets a front end drive any crossword-game analysis engine over a
+line-based text protocol. SIU is not an acronym; it is just SIU.
 
 ## 0. Lineage
 
@@ -11,7 +11,7 @@ César Del Solar drafted in 2023-24
 itself a close translation of chess's UCI. A Macondo implementation was
 started on its `ucgi` branch (2024, unmerged) and MAGPIE adopted UCGI's move
 notation, but the two engines have since diverged. SIU keeps what UCGI got
-right, drops what only made sense for chess, and adds what Scrabble analysis
+right, drops what only made sense for chess, and adds what crossword-game analysis
 needs. Section 13 lists every difference.
 
 SIU is the engine-protocol member of a family of open formats:

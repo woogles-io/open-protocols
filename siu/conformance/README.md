@@ -33,7 +33,7 @@ process, so one failure cannot cascade.
 - `siu_conformance.py` - the harness
 - `grammar.py` - parsers for moves, CGP, `option` and `info` lines
 - `positions.json` - test positions, one or more per mode
-- `mock_engine.py` - a minimal engine that speaks SIU but knows no Scrabble
+- `mock_engine.py` - a minimal engine that speaks SIU but knows nothing about the game
 - `test_grammar.py` - unit tests, including a tile-count check on every position
 
 ## Positions
