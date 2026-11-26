@@ -1,0 +1,38 @@
+{
+  "_comment": "Test positions for the SIU conformance harness. Each 'modes' list names the go modes the position is valid for. Tile counts are checked by test_grammar.py. 'source' says where the CGP came from; none were made up.",
+  "positions": [
+    {
+      "id": "opening-empty-board",
+      "cgp": "15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 AEINRST/ 0/0 0",
+      "lexicon": "CSW21",
+      "bag": 86,
+      "modes": ["gen", "sim", "auto"],
+      "source": "constructed: empty board, on-turn rack only"
+    },
+    {
+      "id": "infer-after-opening-play",
+      "cgp": "15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 / 0/0 0",
+      "moves": ["8H.ZA"],
+      "lexicon": "CSW21",
+      "bag": 86,
+      "modes": ["infer"],
+      "source": "constructed: empty board, racks unknown, opponent opens with ZA"
+    },
+    {
+      "id": "peg-one-in-bag",
+      "cgp": "15/3Q7U3/3U2TAURINE2/1CHANSONS2W3/2AI6JO3/DIRL1PO3IN3/E1D2EF3V4/F1I2p1TRAIK3/O1L2T4E4/ABy1PIT2BRIG2/ME1MOZELLE5/1GRADE1O1NOH3/WE3R1V7/AT5E7/G6D7 ENOSTXY/ACEISUY 356/378 0",
+      "lexicon": "NWL20",
+      "bag": 1,
+      "modes": ["gen", "sim", "peg", "auto"],
+      "source": "MAGPIE README, peg example (jvc56/MAGPIE)"
+    },
+    {
+      "id": "endgame-empty-bag",
+      "cgp": "5BERGS5/4PA3U5/2QAID3R5/3BEE3F2S2/1P1ET2VIATIC2/MA1TAW3c2H2/ES3IS2E2A2/AT1FOLIA4V2/LI1L1EX1E6/1N1O1D2N2Y3/1GNU2C1JETE3/2ER2OHO2N3/2O3GOY6/1INDOW1U7/4DORR7 IKLMTZ/AEINRU? 0/0 0",
+      "lexicon": "OSPD1",
+      "bag": 0,
+      "modes": ["gen", "endgame", "auto"],
+      "source": "CGP spec example (woogles-io/open-protocols/cgp)"
+    }
+  ]
+}
