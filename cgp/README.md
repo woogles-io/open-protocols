@@ -123,20 +123,42 @@ If not specified, the implementer decides what its default lexicon is. It is rec
 
 ### lm (last move)
 
-The lm opcode is followed by the move, in the following format:
+The move that led to this position, made by the player who moved last (the
+last one in the order of the racks and scores). The board in the first field
+already shows it. The lm opcode is followed by the move and, optionally, the
+number of points it scored:
 
-`n8.TILES`
+`lm n8.TILES;` or `lm n8.TILES SCORE;`
 
 where n8 is the coordinate - rows are numbered 1 to 15 and columns are lettered from A to O for a 15x15 board. Horizontal plays start with the numbered row, vertical plays start with the lettered column. For boards that are bigger than 26 columns, use "Excel column notation", i.e. Z, AA, AB, ..., AAA, AAB, ...
 
-"Through" tiles, i.e., tiles already on the board, must be specified as the letter that they are. Don't use parentheses.
+TILES spells the whole main word, in order. Tiles the move placed are
+written as their letters, a blank as the lowercase letter it stands for.
+"Through" tiles, i.e., tiles that were already on the board before the move,
+must be written in parentheses, as the letters they are. Consecutive through
+tiles may share one pair of parentheses. For example, with CAT already on the
+board,
 
-If the move is an exchange, represent as `ex.TILES` if the tiles are known, or replace the tiles with a number of exchanged tiles.
+`lm 8G.S(CAT)TER 10;`
+
+says the move placed S, T, E and R around CAT, and scored 10. Marking the
+through tiles is what lets a reader recover the move's own tiles, which the
+board can't tell it: taking the tiles outside the parentheses off the board,
+and the score away from the player who moved, gives the position before the
+move. (Inferring what the player kept is one use.) A move written without
+parentheses had no through tiles. Records written before this rule may have
+left through tiles unmarked; a reader can't tell those from placed tiles.
+
+If the move is an exchange, represent as `ex.TILES` if the tiles are known, or replace the tiles with a number of exchanged tiles (e.g. `ex.2`).
 
 If the move is a pass or a failed challenge, represent it as `pass`.
 
-If the move is a successful challenge, represent it as `phony.n8.TILES`. This
-represents a move that was challenged off.
+If the move is a successful challenge, represent it as `phony.n8.TILES`, with
+through tiles in parentheses as above. This represents a move that was
+challenged off; the board doesn't show it.
+
+The score, when given, is the move's score alone, without any end-of-game
+adjustment (0 for an exchange, a pass or a phony).
 
 Note: The lm opcode can only be specified once. If you want to specify multiple last moves, you should use a GCG file. This is more meant for immediate state and immediately highlighting the last play.
 
@@ -191,10 +213,17 @@ e.g.
 
 1. From the 2018 US Nationals, game 30. Joel's opening rack was AENSTUU and he exchanged UU. Nigel's opening rack was AELNOQT. From his perspective:
 
-`15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 AELNOQT/ 0/0 0 lex NWL18; lm -2;`
+`15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 AELNOQT/ 0/0 0 lex NWL18; lm ex.2;`
 
 Note: he exchanged QO instead of playing QAT!
 
 2. Endgame from Maven paper (score is unknown, but it doesn't matter)
 
 `5BERGS5/4PA3U5/2QAID3R5/3BEE3F2S2/1P1ET2VIATIC2/MA1TAW3c2H2/ES3IS2E2A2/AT1FOLIA4V2/LI1L1EX1E6/1N1O1D2N2Y3/1GNU2C1JETE3/2ER2OHO2N3/2O3GOY6/1INDOW1U7/4DORR7 IKLMTZ/AEINRU? 0/0 0 lex OSPD1;`
+
+3. A play through tiles already on the board. CAT was played first, on H8
+to J8 for 10 points; the player to move then exchanged, and the other player
+made SCATTER around it, placing S, T, E and R for 10 more. The player to move
+holds AEINRST:
+
+`15/15/15/15/15/15/15/6SCATTER2/15/15/15/15/15/15/15 AEINRST/ 0/20 0 lex NWL23; lm 8G.S(CAT)TER 10;`
