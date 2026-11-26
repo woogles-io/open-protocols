@@ -71,9 +71,24 @@ e.g.
 
 ### 5. Any number of optional operations
 
-An operation is composed of an opcode followed by zero or more operands and is concluded by a semicolon.
+An operation is a dash and its opcode, followed by zero or more operands,
+all separated by single spaces:
 
-Multiple operations are separated by a single space character. If there is at least one operation present in a line, it is separated from the last (fourth) data field by a single space character.
+`-lex CSW24 -bdn CrosswordGame -lm 8G.S(CAT)TER 10`
+
+An operation's operands run to the next token that starts with a dash
+followed by a letter, which begins the next operation; no operand does (a
+negative number, such as a timer of `-2500`, has a digit after its dash). If
+there is at least one operation present in a line, it is separated from the
+last (fourth) data field by a single space character.
+
+**Deprecated form.** Records written before this form end each operation
+with a semicolon and write the opcode without a dash:
+
+`lex CSW24; bdn CrosswordGame; lm 8G.S(CAT)TER 10;`
+
+Readers should still accept it; writers should use the dash form. A record
+uses one form or the other, not both.
 
 ## Opcodes
 
@@ -85,7 +100,7 @@ The number of bonus points a bingo is worth. Default to 50.
 
 The bdn opcode should be followed by the name of the board. For example:
 
-`bdn CrosswordGame;`
+`-bdn CrosswordGame`
 
 If not specified, the implementer decides what its default board is. _The format attaches no special meaning to the board names that are provided in this opcode_. A future opcode might describe the actual board configuration square by square.
 
@@ -109,7 +124,7 @@ The gid opcode should be followed by a game id. The game id must not contain any
 
 The ld opcode should be followed by the name of the letter distribution. For example:
 
-`ld english;`
+`-ld english`
 
 If not specified, the implementer decides what its default letter distribution is. It is recommended that the letter distribution also contain the number of points for each tile.
 
@@ -117,7 +132,7 @@ If not specified, the implementer decides what its default letter distribution i
 
 The lex opcode should be followed by the name of the lexicon. For example:
 
-`lex CSW21;`
+`-lex CSW21`
 
 If not specified, the implementer decides what its default lexicon is. It is recommended that this always be specified, as lexica change relatively quickly.
 
@@ -128,7 +143,7 @@ last one in the order of the racks and scores). The board in the first field
 already shows it. The lm opcode is followed by the move and, optionally, the
 number of points it scored:
 
-`lm n8.TILES;` or `lm n8.TILES SCORE;`
+`-lm n8.TILES` or `-lm n8.TILES SCORE`
 
 where n8 is the coordinate - rows are numbered 1 to 15 and columns are lettered from A to O for a 15x15 board. Horizontal plays start with the numbered row, vertical plays start with the lettered column. For boards that are bigger than 26 columns, use "Excel column notation", i.e. Z, AA, AB, ..., AAA, AAB, ...
 
@@ -139,7 +154,7 @@ must be written in parentheses, as the letters they are. Consecutive through
 tiles may share one pair of parentheses. For example, with CAT already on the
 board,
 
-`lm 8G.S(CAT)TER 10;`
+`-lm 8G.S(CAT)TER 10`
 
 says the move placed S, T, E and R around CAT, and scored 10. Marking the
 through tiles is what lets a reader recover the move's own tiles, which the
@@ -173,7 +188,7 @@ Carlo sims, etc.
 
 e.g.
 
-`oru;`
+`-oru`
 
 ### ti (timer increment)
 
@@ -181,7 +196,7 @@ The timer increment in milliseconds, if one exists.
 
 e.g.
 
-`ti 3000;` means that 3 seconds are added to player clocks after they move
+`-ti 3000` means that 3 seconds are added to player clocks after they move
 
 ### tmr (timer)
 
@@ -189,7 +204,7 @@ Timers can be specified with slashes between players. They must be specified as 
 
 e.g.
 
-`tmr 10000/-2500;`
+`-tmr 10000/-2500`
 
 means the player to move has 10 seconds on their clock, and the other player has gone overtime by 2.5 seconds.
 
@@ -199,7 +214,7 @@ The amount of overtime before the game ends, in milliseconds.
 
 e.g.
 
-`to 60000;` means the game is over after 1 minute of overtime (in typical play, the person who went over loses 10 points for every minute of overtime).
+`-to 60000` means the game is over after 1 minute of overtime (in typical play, the person who went over loses 10 points for every minute of overtime).
 
 ### var (variant)
 
@@ -207,23 +222,23 @@ The variant to use.
 
 e.g.
 
-`var WordSmog;`
+`-var WordSmog`
 
 ## Example CGPs
 
 1. From the 2018 US Nationals, game 30. Joel's opening rack was AENSTUU and he exchanged UU. Nigel's opening rack was AELNOQT. From his perspective:
 
-`15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 AELNOQT/ 0/0 0 lex NWL18; lm ex.2;`
+`15/15/15/15/15/15/15/15/15/15/15/15/15/15/15 AELNOQT/ 0/0 0 -lex NWL18 -lm ex.2`
 
 Note: he exchanged QO instead of playing QAT!
 
 2. Endgame from Maven paper (score is unknown, but it doesn't matter)
 
-`5BERGS5/4PA3U5/2QAID3R5/3BEE3F2S2/1P1ET2VIATIC2/MA1TAW3c2H2/ES3IS2E2A2/AT1FOLIA4V2/LI1L1EX1E6/1N1O1D2N2Y3/1GNU2C1JETE3/2ER2OHO2N3/2O3GOY6/1INDOW1U7/4DORR7 IKLMTZ/AEINRU? 0/0 0 lex OSPD1;`
+`5BERGS5/4PA3U5/2QAID3R5/3BEE3F2S2/1P1ET2VIATIC2/MA1TAW3c2H2/ES3IS2E2A2/AT1FOLIA4V2/LI1L1EX1E6/1N1O1D2N2Y3/1GNU2C1JETE3/2ER2OHO2N3/2O3GOY6/1INDOW1U7/4DORR7 IKLMTZ/AEINRU? 0/0 0 -lex OSPD1`
 
 3. A play through tiles already on the board. CAT was played first, on H8
 to J8 for 10 points; the player to move then exchanged, and the other player
 made SCATTER around it, placing S, T, E and R for 10 more. The player to move
 holds AEINRST:
 
-`15/15/15/15/15/15/15/6SCATTER2/15/15/15/15/15/15/15 AEINRST/ 0/20 0 lex NWL23; lm 8G.S(CAT)TER 10;`
+`15/15/15/15/15/15/15/6SCATTER2/15/15/15/15/15/15/15 AEINRST/ 0/20 0 -lex NWL23 -lm 8G.S(CAT)TER 10`
